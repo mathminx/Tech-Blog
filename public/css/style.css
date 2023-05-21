@@ -1,0 +1,28 @@
+:root {
+  --bloodred: rgb(231, 20, 5);
+}
+
+header {
+  font-family: 'Orbitron', sans-serif;
+  border-bottom: 3px solid var(--bloodred);
+}
+
+.navbar-nav {
+  padding-top: 45px;
+}
+
+.tech {
+  color:rgb(231, 20, 5);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+button{
+  box-shadow: 3px 3px rgb(95, 95, 95);
+}
+
+.form-control:focus, button:focus {
+  box-shadow: 0 0 0 0.2rem rgb(231, 20, 5)!important;
+}
