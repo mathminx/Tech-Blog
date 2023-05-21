@@ -1,0 +1,34 @@
+  <nav class="navbar navbar-expand-lg col justify-content-end align-self-middle">
+    <ul class="navbar-nav mb-2 mb-lg-0 ">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <!-- Conditionally render login or logout links --> 
+        {{#if logged_in}}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+          </li> 
+      {{else}}
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/signup">Sign Up</a>
+        </li>
+      {{/if}}
+      </li>
+    </ul>
+  </nav>
+</header>
+  
+<!-- Loop over each object in the blog posts array -->
+{{#each blogposts as |blogpost| }}
+<div class="card text-bg-secondary mb-3">
+  <div class="card-body px-4 row justify-content-between">
+    <h2 class="col-md-auto">{{blogpost.title}}</h2>
+    <div class="col"></div>
+    <p class="card-subtitle col-md-auto pt-3">Posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}}</p>
+  </div>
+ </div mb>
+{{/each}}

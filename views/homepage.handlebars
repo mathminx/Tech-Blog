@@ -1,0 +1,19 @@
+<!-- Loop over each object in the blog posts array -->
+{{#each blogposts as |blogpost| }}
+<div class="card bg-body-secondary mb-3" style="border: 3px solid black">
+  <div class="card-body pb-0">
+    <div class="card-header px-0 py-0 row justify-content-between">
+      <h2 class="col-md-auto">{{blogpost.title}}</h2>
+      <div class="col"></div>
+      <p class="card-subtitle col-md-auto pt-3">Posted by {{blogpost.user.name}} on {{format_date blogpost.date_created}}</p>
+    </div>
+    <p class="mt-3">
+      {{blogpost.content}}
+    </p>
+  </div>
+ </div mb>
+{{/each}}
+
+<!-- {{#if logged_in}} -->
+  <script src="/js/logout.js"></script>
+  <!-- {{/if}} -->
