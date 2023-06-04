@@ -1,42 +1,19 @@
-  <nav class="navbar navbar-expand-lg col justify-content-end align-self-middle">
-    <ul class="navbar-nav mb-2 mb-lg-0 ">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/">Home</a>
-      </li>
-      <li>  
-        <a class="nav-link active" aria-current="page" href="/dashboard">Dashboard</a>
-      </li>
-      <!-- Conditionally render login or logout links --> 
-      <!-- {{#if logged_in}} -->
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
-        </li>
-        <!-- {{else}} -->
-          <li class="nav-item"></li>
-            <a class="nav-link active" aria-current="page" href="/login">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/signup">Sign Up</a>
-          </li>
-        <!-- {{/if}} -->
-      </li>
-    </ul>
-  </nav>
-</header>
-  
-<form class="row mx-auto form-control-lg login-form" value="#FFFFFF" style="padding-top: 50px; width: 40%; min-width: 200px ;">
-  <div class="form-text mt-4 text-black fs-3 fw-bold">Login</div>
-  <div class="mb-3 mt-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" id="email-login" class="form-control form-control-lg border border-dark border-3 shadow-lg p-3 mb-3 bg-body-tertiary rounded" placeholder="email@example.com" aria-describedby="emailHelp">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" id="password-login" class="form-control form-control-lg border border-dark border-3 shadow-lg p-3 mb-3 bg-body-tertiary rounded">
-  </div>
-  <div class="d-grid gap-2 col-6 mx-auto">
-    <button type="submit" class="btn btn-lg rounded-1 fw-bold bg-white border-dark border-3 mt-4">Login</button>
-  </div>
-</form>
+<body>  
+  <form class="row mx-auto form-control-lg login-form" value="#FFFFFF" style="padding-top: 50px; width: 40%; min-width: 200px ;">
+    <div class="form-text mt-4 text-black fs-3 fw-bold">Login</div>
+    <div class="mb-3 mt-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" id="email-login" class="form-control form-control-lg border border-dark border-3 shadow-lg p-3 mb-3 bg-body-tertiary rounded" placeholder="email@example.com" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" id="password-login" class="form-control form-control-lg border border-dark border-3 shadow-lg p-3 mb-3 bg-body-tertiary rounded">
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="submit" class="btn btn-lg rounded-1 fw-bold bg-white border-dark border-3 mt-4">Login</button>
+    </div>
+  </form>
 
-<script src="./js/login.js"></script>
+  <script src="./js/login.js"></script>
+
+</body>  
