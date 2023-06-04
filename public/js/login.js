@@ -11,16 +11,16 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log("response", response);
+    
     if (response.ok) {
       // If successful, redirect the browser to the dashboard page
+      alert("Login successful!");
       document.location.replace('/dashboard');
       return;
     } else {
-      alert(response.statusText);
+      alert("Something went wrong. Please try again.");
     }
-  }
+  };
+}
 
-};
-
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('.login-form').addEventListener('submit', loginFormHandler)
