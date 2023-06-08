@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { User, BlogPost, Comment } = require('../models');
+const { User, Blogpost, Comment } = require('../models');
 
 const userData = require('./userData.json');
 const blogPostData = require('./blogPostData.json');
@@ -16,7 +16,7 @@ const seedDatabase = async () => {
   console.log('\n----- User Table Seeded -----\n');
 
   for (const blogpost of blogPostData) {
-    const newBlogPost = await BlogPost.create({
+    const newBlogPost = await Blogpost.create({
       ...blogpost,
     });
   }
