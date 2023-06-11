@@ -1,8 +1,6 @@
 # Tech-Blog
 
-Writing about tech can be just as important as making it. Developers spend plenty of time creating new applications and debugging existing codebases, but most developers also spend at least some of their time reading and writing about technical concepts, recent advancements, and new technologies. A simple Google search for any concept covered in this course returns thousands of think pieces and tutorials from developers of all skill levels. I built this CMS-style blog site so that developers can publish their blog posts and comment on other developers’ posts as well. 
-
-The app follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
+This CMS-style blog site was created for developers to publish their blog posts from the dashboard and comment on other developers’ posts from the home page. The application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. 
 
 ## Table of Contents
 
@@ -14,63 +12,30 @@ The app follows the MVC paradigm in its architectural structure, using Handlebar
 
 ## Installation
   
-Run `npm install` to install the dependencies; 
-Npm run seed
-`npm start`
+Run `npm install` to install the dependencies. 
+Run `npm run seed` to seed the database.
+Run `npm start` to invoke the application.
 
 
 ## Usage
 
-WHEN I visit the site for the first time THEN I am presented with the homepage
+When you visit the site for the first time, you are presented with the homepage and a navigation menu with links to the homepage, the dashboard, the login page, and the signup page.
 
-includes existing blog posts if any have been posted
-navigation links for the homepage and the dashboard
-option to log in
-WHEN I click on the homepage option THEN I am taken to the homepage
+When you click on any menu link other than the home page option, you are prompted to log in or sign up for an account.
 
-WHEN I click on any other links in the navigation THEN I am prompted to either sign up or sign in
+When you click the **Sign Up link**, you are prompted to input a username and an email address, and to create a password. Your username will be displayed on your blog posts and comments. Your password must be at least 8 characters long. When you click on the **Submit** button, you user credentials are saved and you are logged into the website.
 
-WHEN I choose to sign up THEN I am prompted to create a username and password
+When you revisit the site at a later time and choose to log in, you will be prompted to enter your email adresss and password. When you log in, the **Login** and **Sign Up** menu options are replaced by a **Logout** option.  
 
-WHEN I click on the sign-up button THEN my user credentials are saved and I am logged into the site
+When you click on the homepage link, you are taken to the homepage where you can view and comment on any existing blog posts. Each blog post includes a title, the user name of the creator, and the date on which it was created. You can click on any existing blog post to view comments and/or enter a comment of your own. Once you have written your comment, click on the **Submit** button to save it. The blog post will then be updated to display your comment, username, and the dated you created the comment. You mustbe logged in to leave comments.
 
-WHEN I revisit the site at a later time and choose to sign in THEN I am prompted to enter my username and password
+When you click on the dashboard option in the navigation menu, you are taken to the dashboard, where you will be presented with the titles of all the blog posts you have already created and an option to create a new blog post. When you click on the link to add a new blog post, you are prompted to enter both a title and contents for your blog post. Once you are finished, click on the **Save** button. The title and contents of your post are saved and you are taken back to an updated dashboard that includes your new blog post.
 
-WHEN I am signed in to the site THEN I see navigation links
+If you wish to update or delete one of your existing blog posts, click on the grey bar containing the title of the post you want to update or delete. To update the post, make your changes and click the **Update** button to save it. To delete the post, click the **Delete** button. Once the selected blog past has been saved or deleted, you are taken back to the updated dashboard. 
 
-homepage
-dashboard
-option to log out
-WHEN I click on the homepage option in the navigation THEN I am taken to the homepage
+To log out of the application, click on the **Logout** option in the navigation menu.
 
-presented with existing blog posts
-include post title and date created
-WHEN I click on an existing blog post THEN I am presented with
-
-post title
-contents
-post creator’s username
-date created for that post
-have the option to leave a comment
-WHEN I enter a comment and click on the submit button while signed in THEN the comment is saved the post is updated to
-
-display the comment
-the comment creator’s username
-date created
-WHEN I click on the dashboard option in the navigation THEN I am taken to the dashboard
-
-presented with any blog posts I have already created
-the option to add a new blog post
-WHEN I click on the button to add a new blog post THEN I am prompted to enter both a title and contents for my blog post
-
-WHEN I click on the button to create a new blog post THEN the title and contents of my post are saved and I am taken back to an updated dashboard with my new blog post
-
-WHEN I click on one of my existing posts in the dashboard THEN I am able to delete or update my post and taken back to an updated dashboard
-
-WHEN I click on the logout option in the navigation THEN I am signed out of the site
-
-WHEN I am idle on the site for more than a set time THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
-
+If you are idle on the site for more than a five minutes, you are still able to view comments, but if you try to enter a comment, you are prompted to log in again.
 
 
 ## License
