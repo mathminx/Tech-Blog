@@ -1,9 +1,10 @@
 const newPostFormHandler = async (event) => {
   event.preventDefault();
-
+  
   // Collect values from the input form
   const title = document.querySelector('#title').value.trim();
   const content = document.querySelector('#content').value.trim();
+
   if (!title && content) {
     alert("Title and content are required fields!");
     return;
@@ -17,11 +18,11 @@ const newPostFormHandler = async (event) => {
   
   if (response.ok) {
     // If successful, redirect the browser to the dashboard page
-    alert("New post saved!");
+    alert("New blog post saved!");
     document.location.replace('/dashboard');
   } 
   else {
-    alert("Something went wrong. Please try again.");
+    alert("Unable to save blog post!");
   }
 };
 

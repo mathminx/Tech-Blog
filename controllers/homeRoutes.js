@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { Blogpost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Render home page
+
+// Render home page with all blog posts
 router.get('/', async (req, res) => {
   try {
     const blogpostData = await Blogpost.findAll({
@@ -11,16 +12,11 @@ router.get('/', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
-        {
-          model: Comment, 
-          include: [{ model: User }]
-        }
       ],
     });
     const blogposts = blogpostData.map((blogpost) =>
       blogpost.get({plain: true})
     );
-    // Pass serialized data and session flag into template
     res.render('homepage', {
       blogposts,
       logged_in: req.session.logged_in
@@ -32,7 +28,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Render one blog post with comments
+// Render one blog post from the home page with comments
 router.get('/blogpost/:id', async (req, res) => {
   try {
     const blogpostData = await Blogpost.findOne({
@@ -66,21 +62,22 @@ router.get('/blogpost/:id', async (req, res) => {
       res.status(400).json({ message: "Unable to retrieve blog data."});
       return;
     }
+        
     const blogpost = blogpostData.get({ plain: true });
-    res.render('blogpost&Comments', { blogpost });
+    res.render('singleHomepageBlogpost', { blogpost });
   }
   catch(err) {
     res.status(500).json(err);
   }
 });
 
-// Render dashboard 
-router.get('/dashboard', async (req, res) => {
+// Render dashboard with blog posts
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const blogpostData = await Blogpost.findAll({
-      /*where: {
-        user_id: req.session.id
-      },*/
+      where: {
+        user_id: req.session.user_id
+      },
       include: [
         {
           model: User,
@@ -99,10 +96,10 @@ router.get('/dashboard', async (req, res) => {
     const blogposts = blogpostData.map((blogpost) =>
       blogpost.get({plain: true})
     );
-    // Pass serialized data and session flag into template
     res.render('dashboard', {
       blogposts,
-      logged_in: true 
+      logged_in: true,
+      user_id: req.session.user_id,
     });
   }
   catch(err) {
@@ -112,7 +109,7 @@ router.get('/dashboard', async (req, res) => {
 });
 
 // Render one blog post from the dashboard
-router.get('/singleBlogpost/:id', async (req, res) => {
+router.get('/singleDashboardBlogpost/:id', withAuth, async (req, res) => {
   try {
     const blogpostData = await Blogpost.findOne({
       where: {
@@ -132,7 +129,7 @@ router.get('/singleBlogpost/:id', async (req, res) => {
       return;
     }
     const blogpost = blogpostData.get({ plain: true });
-    res.render('singleBlogpost', { blogpost });
+    res.render('singleDashboardBlogpost', { blogpost });
   }
   catch(err) {
     res.status(500).json(err);
@@ -140,31 +137,14 @@ router.get('/singleBlogpost/:id', async (req, res) => {
 });
 
 // Render new blog post page
-router.get('/addBlogpost', (req, res) => {
+router.get('/addBlogpost', withAuth, (req, res) => {
   res.render('addBlogpost');
 });
-
-// Render update blog post page
-router.get('/updateBlogpost/:id', async (req, res) => {
-  try {
-    const blogpostData = await Blogpost.findOne({
-      where: {
-        id: req.params.id
-      },
-    });
-    if (!blogpostData) {
-      res.status(400).json({ message: "Unable to retrieve blog data."});
-      return;
-    }
-    const blogpost = blogpostData.get({ plain: true });
-    console.log(blogpost);
-    res.render('updateBlogpost', { blogpost });
-  }
-  catch(err) {
-    res.status(500).json(err);
-  }
-});
   
+// Render new comment page
+router.get('/addComment', withAuth, (req, res) => {
+  res.render('addComment');
+});
 
 // Render login page
 router.get('/login', (req, res) => {
