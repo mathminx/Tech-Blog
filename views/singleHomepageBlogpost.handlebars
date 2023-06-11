@@ -1,0 +1,27 @@
+<body>
+  <!-- Render blog post -->
+  <div class="card bg-body-secondary mb-3" style="border: 3px solid black">
+    <div class="card-body ">
+      <div class="card-header px-0 py-0 row justify-content-between">
+        <h2 class="col-md-auto">{{blogpost.title}}</h2>
+        <p class="card-subtitle col-md-auto pt-3">Posted by {{blogpost.user.name}} on {{format_date blogpost.created_at}}</p>
+      </div>
+      <p class="pt-3 mb-1">{{blogpost.content}}</p>
+    </div>
+  </div>
+
+  <!-- Render comments -->
+  <div class="comments-page container px-5 pb-5 mr-5"> 
+    <div class="row justify-content-between p-3 mb-3">
+      <h3 class="col-md-auto fw-bold px-0 pt-2 fs-5 text-left">Comments: </h3>
+      <a href="/addComment" role="button" class="col-3"><button type="button" style="box-shadow: 2px px black" class="btn btn-lg rounded-1 p-2 fw-bold bg-white border-dark border-3">Add a comment</button></a>
+    </div>
+    {{#each blogpost.comments as |comment|}}
+      <div class="card card-body fs-5 mb-5 shadow-lg p-3 border border-0">
+        <p style="margin: 0px">{{comment.content}} <small style="font-style: italic;">&nbsp;&nbsp;- {{user.name}}</small></p>
+      </div>
+    {{/each}}
+  </div>
+</body>
+
+<script>sessionStorage.setItem("blogpostId", {{blogpost.id}});</script>

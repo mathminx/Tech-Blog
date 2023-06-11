@@ -1,0 +1,24 @@
+<body>
+  <!-- Save the blogpost ID to session storage -->
+  <script>sessionStorage.setItem("blogpostId", {{blogpost.id}});</script>
+
+    <form class="row mx-auto post-form" value="#FFFFFF" style="width: 80%; min-width: 200px;">
+      <div class="mb-3 form-text text-black fs-3 fw-bold">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <textarea type="text" style="height: 5vh" class="form-control" id="title">{{blogpost.title}}</textarea>
+      </div>
+      <div class="mb-2 form-text text-black fs-3 fw-bold">
+        <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+        <textarea class="form-control" style="height: 45vh" id="content">{{blogpost.content}}</textarea>
+      </div>
+      <div class="col-8 mx-auto" style="justify-content: space-around; display: flex; flex-wrap=wrap;">
+        <button type="submit" style="width: 20vw;" class="update-button btn btn-lg rounded-1 fw-bold bg-white border-dark border-3 mt-4">Update</button></a>
+        <button type="submit" style="width: 20vw;" class="delete-button btn btn-lg rounded-1 fw-bold bg-white border-dark border-3 mt-4">Delete</button></a>
+      </div>
+    </form>
+    <p class="mt-4 text-center">To update this blog post, make the desired changes and click the Update button</p>
+    <p class="text-center">To delete this blog post, click the Delete button</p>
+
+  <script src="../js/updateOrDeleteBlogpost.js"></script>
+
+</body>

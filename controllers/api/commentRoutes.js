@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
     const commentData = await Comment.findAll({
     });
     if (!commentData) {
-      res.status(400).json({ message: "Unable to retrieve comments data."});
+      res.status(400).json({ message: "Unable to retrieve comments."});
       return;
     }
     res.status(200).json(commentData);
@@ -25,7 +25,7 @@ router.get('/:id', async (req, res) => {
       }
     });
     if (!commentData) {
-      res.status(404).json({ message: "Unable to retrieve comments data."});
+      res.status(404).json({ message: "Unable to retrieve comment."});
       return;
     }
     res.status(200).json(commentData);
@@ -35,16 +35,22 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', /*withAuth,*/ async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
+  console.log(req.body);
   try {
-    const newComment = await Comment.create(req.body);
+    const newComment = await Comment.create({
+      content: req.body.content,
+      user_id: req.session.user_id,
+      blogpost_id: req.body.blogpost_id,
+    });
+    console.log(req.body);
     res.status(200).json(newComment);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const commentData = await Comment.update(req.body, {
       where: {
