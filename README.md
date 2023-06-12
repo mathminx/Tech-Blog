@@ -33,15 +33,19 @@ When you click the **Sign Up link**, you will be prompted to input a username an
 ![image](https://github.com/mathminx/Tech-Blog/assets/122234007/8b34f771-06ab-4276-b94a-84764096ec1b)
 
 
-
 When you click on the **Submit** button, your user credentials will be saved and you will be logged into the website.
 
 ![image](https://github.com/mathminx/Tech-Blog/assets/122234007/c7e394d2-fcc7-4e9c-ab34-1ed8e426a616)
 
 
-When you revisit the site at a later time and choose to log in, you will be prompted to enter your email adresss and password. When you log in, the **Login** and **Sign Up** menu options will be replaced by a **Logout** option.  
+When you revisit the site at a later time and choose to log in, you will be prompted to enter your email adresss and password. 
 
-![image](https://github.com/mathminx/Tech-Blog/assets/122234007/05dd8614-5e63-458f-8584-0b8cf56ec9e9)
+![image](https://github.com/mathminx/Tech-Blog/assets/122234007/122d6126-bb64-490f-a7d7-4623879cdb3a)
+
+
+When you log in, the **Login** and **Sign Up** menu options will be replaced by a **Logout** option.  
+
+![image](https://github.com/mathminx/Tech-Blog/assets/122234007/425f366b-8d04-4348-bfb9-7c8fbb2f4495)
 
 
 When you click on the homepage link, you will be taken to the homepage where you can view and comment on any existing blog posts. Each blog post includes a title, the user name of the creator, and the date on which it was created. 
@@ -66,7 +70,7 @@ The blog post will be updated to display your comment, username, and the dated y
 
 When you click on the dashboard option in the navigation menu, you will taken to your dashboard, where you will be presented with the titles of all the blog posts you have already created and an option to create a new blog post. 
 
-![image](https://github.com/mathminx/Tech-Blog/assets/122234007/f796e679-f357-42d4-94c0-9ff535c24cae)
+![image](https://github.com/mathminx/Tech-Blog/assets/122234007/53ad7508-fce1-4c2e-8326-ab0c7ea9272c)
 
 
 When you click on the link to add a new blog post, you will prompted to enter both a title and contents for your blog post. Once you are finished, click on the **Save** button. 
@@ -94,7 +98,7 @@ Your updated post will be saved and you will be taken back to your dashboard whe
 ![image](https://github.com/mathminx/Tech-Blog/assets/122234007/c4eff399-8eec-4e3b-bbc5-46372a7d8885)
 
 
-To delete the post, click the **Delete** button. 
+To delete a post, click the **Delete** button. 
 
 ![image](https://github.com/mathminx/Tech-Blog/assets/122234007/2d5ea6db-9dab-439a-ab48-bfa4d29a6b2b)
 
