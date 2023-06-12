@@ -33,6 +33,7 @@ When you click the **Sign Up link**, you will be prompted to input a username an
 ![image](https://github.com/mathminx/Tech-Blog/assets/122234007/8b34f771-06ab-4276-b94a-84764096ec1b)
 
 
+
 When you click on the **Submit** button, your user credentials will be saved and you will be logged into the website.
 
 ![image](https://github.com/mathminx/Tech-Blog/assets/122234007/c7e394d2-fcc7-4e9c-ab34-1ed8e426a616)
