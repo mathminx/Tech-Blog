@@ -43,45 +43,9 @@ router.post('/', withAuth, async (req, res) => {
       user_id: req.session.user_id,
       blogpost_id: req.body.blogpost_id,
     });
-    console.log(req.body);
     res.status(200).json(newComment);
   } catch (err) {
     res.status(400).json(err);
-  }
-});
-
-router.put('/:id', withAuth, async (req, res) => {
-  try {
-    const commentData = await Comment.update(req.body, {
-      where: {
-        id: req.params.id,
-      }
-    });
-    if (!commentData) {
-      res.status(400).json({ message: "Unable to retrieve comment."});
-      return;
-    }
-    res.status(200).json({message: `Comment updated!`});
-  }
-  catch(err) {
-    res.status(500).json(err);
-  }
-});
-
-router.delete('/:id', withAuth, async (req, res) => {
-  try {
-    const commentData = await Comment.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    if (!commentData) {
-      res.status(400).json({ message: "Unable to retrieve comment."});
-      return;
-    }
-    res.status(200).json("Comment deleted!");
-  } catch (err) {
-    res.status(500).json(err);
   }
 });
 

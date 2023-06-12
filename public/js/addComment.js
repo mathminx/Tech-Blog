@@ -21,7 +21,7 @@ const newCommentFormHandler = async (event) => {
   if (response.ok) {
     // If successful, redirect the browser to the dashboard page
     alert("Comment saved!");
-    document.location.href = `http://localhost:3001/blogpost/${blogpost_id}`
+    document.location.href = `/blogpost/${blogpost_id}`
   } 
   else {
     alert("Unable to add comment.");
