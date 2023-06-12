@@ -1,6 +1,6 @@
 # Tech-Blog
 
-This CMS-style blog site was created for developers to publish their blog posts from a dashboard and comment on other developers’ posts from the home page. The application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and an Express.js API for the contollers. The application also uses the dotenv package to enable use of environment variables, the bcrypt package to hash passwords, and the express-session and connect-session-sequelize packages for user authentication. The express-session package stores the session data on the client in a cookie that expires after five minutes of user inactivity. 
+This CMS-style blog site was created for developers to publish their blog posts from a dashboard and comment on other developers’ posts from the home page. The application follows the MVC paradigm in its architectural structure, using Handlebars.js as the templating language, Sequelize as the ORM, and an Express.js API for the contollers. The application also uses Bootstrap for front-end styling, the dotenv package to enable use of environment variables, the bcrypt package to hash passwords, and the express-session and connect-session-sequelize packages for user authentication. The express-session package stores the session data on the client in a cookie that expires after five minutes of user inactivity. 
 
 ## Table of Contents
 
