@@ -61,10 +61,12 @@ router.get('/blogpost/:id', async (req, res) => {
     if (!blogpostData) {
       res.status(400).json({ message: "Unable to retrieve blog data."});
       return;
-    }
-        
+    }    
     const blogpost = blogpostData.get({ plain: true });
-    res.render('singleHomepageBlogpost', { blogpost });
+    res.render('singleHomepageBlogpost', { 
+      blogpost,
+      logged_in: req.session.logged_in
+     });
   }
   catch(err) {
     res.status(500).json(err);
@@ -129,7 +131,10 @@ router.get('/singleDashboardBlogpost/:id', withAuth, async (req, res) => {
       return;
     }
     const blogpost = blogpostData.get({ plain: true });
-    res.render('singleDashboardBlogpost', { blogpost });
+    res.render('singleDashboardBlogpost', { 
+      blogpost,
+      logged_in: req.session.logged_in
+    });
   }
   catch(err) {
     res.status(500).json(err);
@@ -138,12 +143,16 @@ router.get('/singleDashboardBlogpost/:id', withAuth, async (req, res) => {
 
 // Render new blog post page
 router.get('/addBlogpost', withAuth, (req, res) => {
-  res.render('addBlogpost');
+  res.render('addBlogpost', {
+    logged_in: req.session.logged_in 
+  });
 });
   
 // Render new comment page
 router.get('/addComment', withAuth, (req, res) => {
-  res.render('addComment');
+  res.render('addComment', {
+    logged_in: req.session.logged_in
+  });
 });
 
 // Render login page

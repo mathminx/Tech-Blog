@@ -1,25 +1,27 @@
-<div class="container container-fluid text-center" id="container">
-  <div class="col-sm-12 lh-1 mb-2 text-center" style="padding: 0 1% 0 1%">
-    <a class="nav-link active link-underline link-underline-opacity-0 text-black" id="add-blogpost" style="font-size: 0px" aria-current="page" href="/addBlogpost">
-      <span class="text-end" style="font-size: 55px; text-decoration: underline; text-decoration-color: var(--bloodred); text-decoration-thickness: 5%;">Click here to add a new post &nbsp;&nbsp;</span>
-      <span class="text-start" style="color: var(--bloodred); font-size: 77px; ">&#128395;</span>
-    </a>
-    <p class="text-center text-black mt-5 fs-5">Click on any title bar below to view, update, or delete the blog post.</p>
+<body>
+  <div class="container container-fluid text-center" id="container">
+    <div class="col-sm-12 lh-1 mb-2 text-center" style="padding: 0 1% 0 1%">
+      <a class="nav-link active link-underline link-underline-opacity-0 text-black" id="add-blogpost" style="font-size: 0px" aria-current="page" href="/addBlogpost">
+        <span class="text-end" style="font-size: 55px; text-decoration: underline; text-decoration-color: var(--bloodred); text-decoration-thickness: 5%;">Click here to add a new post &nbsp;&nbsp;</span>
+        <span class="text-start" style="color: var(--bloodred); font-size: 77px; ">&#128395;</span>
+      </a>
+      <p class="text-center text-black mt-5 fs-5">Click on any title bar below to view, update, or delete the blog post.</p>
+    </div> 
   </div> 
-</div> 
 
-<div>
-  <form class="form-control mt-4 border border-0">
-    <!-- Loop over each object in the blog posts array -->
-    {{#each blogposts as |blogpost| }}
-      <div class="card border border-3 border-black text-bg-secondary mb-3">
-        <div class="card-body px-4 row justify-content-between">
-          <h2 class="col-md-auto card-text">{{blogpost.title}}</h2>
-          <p class="card-subtitle col-md-auto pt-3">Posted by {{blogpost.user.name}} on {{format_date blogpost.created_at}}</p>
-          <a href="/singleDashboardBlogpost/{{id}}" class="uk-button stretched-link border border-0"></a>
-        </div>
-      </div mb>
-    {{/each}}
-  </form>
-</div>
+  <div>
+    <form class="form-control mt-4 border border-0">
+      <!-- Loop over each object in the blog posts array -->
+      {{#each blogposts as |blogpost| }}
+        <div class="card border border-3 border-black text-bg-secondary mb-3">
+          <div class="card-body px-4 row justify-content-between">
+            <h2 class="col-md-auto card-text">{{blogpost.title}}</h2>
+            <p class="card-subtitle col-md-auto pt-3">Posted by {{blogpost.user.name}} on {{format_date blogpost.created_at}}</p>
+            <a href="/singleDashboardBlogpost/{{id}}" class="uk-button stretched-link border border-0"></a>
+          </div>
+        </div mb>
+      {{/each}}
+    </form>
+  </div>
+</body>
 
