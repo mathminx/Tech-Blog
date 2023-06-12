@@ -18,7 +18,7 @@
     </div>
     {{#each blogpost.comments as |comment|}}
       <div class="card card-body fs-5 mb-5 shadow-lg p-3 border border-0">
-        <p style="margin: 0px">{{comment.content}} <small style="font-style: italic;">&nbsp;&nbsp;- {{user.name}}</small></p>
+        <p style="margin: 0px">{{comment.content}}<small style="font-style: italic;">&nbsp;&nbsp;- {{user.name}}, &nbsp;{{format_date comment.created_at}}</small></p>
       </div>
     {{/each}}
   </div>
