@@ -11,7 +11,11 @@ This CMS-style blog site was created for developers to publish their blog posts 
 
 ## Installation
 
-The application is deployed to Heroku. To install the application locally, do the following:
+The application is deployed to Heroku. 
+
+
+
+To install the application locally, do the following:
   
 * Run `npm install` to install the dependencies. 
 * Run `npm run seed` to seed the database.
